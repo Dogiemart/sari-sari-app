@@ -1,0 +1,23 @@
+{
+  "name": "sari-sari-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmwgr4/sari-sari-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmwgr4/sari-sari-app/issues"
+  },
+  "homepage": "https://github.com/jmwgr4/sari-sari-app#readme",
+  "dependencies": {
+    "electron": "^38.2.2"
+  }
+}
