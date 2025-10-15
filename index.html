@@ -3,71 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sari-Sari Store</title>
+    <title>Sari-Sari Store Inventory</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Sari-Sari Store Inventory Management</h1>
+        <h1>Sari-Sari Inventory</h1>
+        <p>Track products and keep the shelves stocked.</p>
+
+        <div class="header-buttons">
+            <button class="btn sync">Sync Inventory</button>
+            <button class="btn reset">Reset Inventory</button>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Welcome to the Sari-Sari Store Inventory Management System</h2>
+        <!-- Section: Add Item -->
+        <section class="add-item-section">
+            <h2>Add New Item</h2>
             <form id="add-product-form">
-                <div-class="form-group">
-                    <label for="product-name">Product Name:</label>
-                    <input type="text" id="product-name" name="product-name" required>
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" name="product-name" placeholder="e.g., Instant Noodles" required>
                 </div>
 
-                <div-class="form-group">
-                    <label for="product-price">Price (PHP): </label>
-                    <input type="number" id="product-price" name="product-price" step="0.01" min="0" required>
+                <div class="form-group">
+                    <label for="product-price">Price (₱)</label>
+                    <input type="number" id="product-price" name="product-price" step="0.01" min="0" value="0.00" required>
                 </div>
 
-                <div-class="form-group">
-                    <label for="product-stock">Initial Stock:</label>
-                    <input type="number" id="product-stock" name="product-stock" min="0" required>
+                <div class="form-group">
+                    <label for="product-stock">Quantity</label>
+                    <input type="number" id="product-stock" name="product-stock" min="0" value="0" required>
                 </div>
-                
-                <button type="submit" id="add-item-btn">Add Product</button>
 
+                <button type="submit" id="add-item-btn" class="btn add">Add Item</button>
             </form>
-        </section> 
+        </section>
 
-        <hr>
-
-        <section id="Inventory-list-section">
-            <h2>Current Inventory</h2>
-
-            <div id="search-bar" class="form-group">
-                <label for="search-input">Search Item:</label>
-                <input type="text" id="search-input" placeholder="Enter product name...">
+        <!-- Section: Inventory -->
+        <section id="inventory-section">
+            <h2>Inventory</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search item...">
             </div>
 
-            <table id="Inventory-table">
+            <table id="inventory-table">
                 <thead>
                     <tr>
-                        <th>Product Name</th>
-                        <th>Price (PHP)</th>
-                        <th>Stock</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="4" style="text-align: center; font-style: italic; color: gray;">
-                            No items in inventory. Add one above!
-                        </td>
+                        <td colspan="4" class="empty-msg">No items in inventory. Add one above!</td>
                     </tr>
-                    <!-- Inventory items will be dynamically added here -->
                 </tbody>
             </table>
+        </section>
+
+        <!-- Section: Summary -->
+        <section class="summary">
+            <div class="total-value">
+                <span>Total Inventory Value</span>
+                <h3>₱400.00</h3>
+            </div>
+            <div class="total-sales">
+                <span>Total Sales</span>
+                <h3>₱0.00</h3>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Coco, Labadia, Rollorata Sari-Sari Inventory App</p>
+        <p>© 2025 Coco, Labadia, Rollorata Sari-Sari Inventory App</p>
     </footer>
-    
 </body>
 </html>
